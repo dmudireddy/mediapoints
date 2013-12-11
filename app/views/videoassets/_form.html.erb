@@ -1,0 +1,55 @@
+  <div class="form">
+<%= form_for(@videoasset) do |f| %>
+  <% if @videoasset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@videoasset.errors.count, "error") %> prohibited this videoasset from being saved:</h2>
+
+      <ul>
+      <% @videoasset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.label :merlinid %><br>
+    <%= f.number_field :merlinid %>
+ 
+  <div class="points"> 
+  <%= f.fields_for :points do |m| %>
+  <%= m.label :mptype_id %><br>
+  <%= m.select :mptype_id,@mptypes , {:prompt => 'Select One'},{:onchange => "get_dynamic_form(this)"} %>
+  <div id = "itunes_form">
+  	
+<%= m.label :img %>
+<%= m.text_field :img%><br>
+<%= m.label :title%>
+<%= m.text_field :title%><br>
+<%= m.label :artist%>
+<%= m.text_field :artist%><br>
+<%= m.label :price%>
+<%= m.text_field :price%><br>
+<%= m.label :launchLink%>
+<%= m.text_field :launchLink%><br>
+  	
+  </div>
+  <div id  = "ad_form">
+  <%= m.label :ad_start%>
+  <%= m.text_field :ad_start%></br>   
+  <%= m.label :ad_duration %>
+  <%= m.text_field :ad_duration%></br>
+  <%= m.label :ad_url%>
+  <%= m.text_field :ad_url %>
+  </div>  
+
+  	
+  	
+  	<%end%>
+  	
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+   </div>
+<% end %>

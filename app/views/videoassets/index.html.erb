@@ -1,0 +1,27 @@
+<h1>Listing videoassets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Merlinid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @videoassets.each do |videoasset| %>
+      <tr>
+        <td><%= videoasset.merlinid %></td>
+        <td><%= link_to 'Show', videoasset %></td>
+        <td><%= link_to 'Edit', edit_videoasset_path(videoasset) %></td>
+        <td><%= link_to 'Destroy', videoasset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Videoasset', new_videoasset_path %>

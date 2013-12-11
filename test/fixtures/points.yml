@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  videoasset_id: 1
+  mptype_id: 1
+  img: MyString
+  title: MyString
+  artist: MyString
+  price: 9.99
+  launchLink: MyString
+
+two:
+  videoasset_id: 1
+  mptype_id: 1
+  img: MyString
+  title: MyString
+  artist: MyString
+  price: 9.99
+  launchLink: MyString
